@@ -17,6 +17,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 10;
+    flex-wrap: wrap;
 }
 
 .logo img {
@@ -26,11 +27,18 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
 }
 
 .nav-links li a {
-    color: #eaffea;
+    color: #99ff99;
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
@@ -111,8 +119,11 @@ body {
 
 @media (max-width: 768px) {
     .nav-links {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 10px;
+        padding-top: 10px;
     }
 
     .slide img, .hero-box {
