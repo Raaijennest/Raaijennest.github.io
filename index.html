@@ -1,69 +1,81 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welkom bij Bed & Breakfast De Schaapskooi</title>
+    <meta name="description" content="Welkom bij Bed & Breakfast De Schapenzolder, een rustieke B&B in het hart van het platteland met comfortabele kamers en schattige schapen.">
+    <meta name="keywords" content="Bed & Breakfast, Schapenzolder, Kamer, Schapen, Platteland, Comfortabele kamers">
+    <meta name="author" content="Bed & Breakfast De Schapenzolder">
+    <title>Welkom bij Bed & Breakfast De Schapenzolder</title>
     <link rel="stylesheet" href="style.css">
+	
 </head>
-<body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="Logo B&B">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="prijs.html">Prijs</a></li>
-            <li><a href="kalender.html">Kalender</a></li>
-            <li><a href="recensies.html">Recensies</a></li>
-            <li><a href="omgeving.html">Omgeving</a></li>
-            <li><a href="historie.html">Historie</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
 
-    <header class="hero-box">
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo van Bed & Breakfast De Schapenzolder">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="prijs.html">Prijs</a></li>
+                <li><a href="kalender.html">Kalender</a></li>
+                <li><a href="recensies.html">Recensies</a></li>
+                <li><a href="omgeving.html">Omgeving</a></li>
+                <li><a href="historie.html">Historie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-box">
         <div class="slideshow-container">
             <div class="slide fade">
-                <img src="room1.jpg" alt="Kamer 1">
+                <img src="schapenschuur.png" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
             </div>
             <div class="slide fade">
-                <img src="room2.jpg" alt="Kamer 2">
+                <img src="schapenschuur2.png" alt="Kamer 2 in Bed & Breakfast De Schapenzolder">
             </div>
             <div class="slide fade">
-                <img src="sheep1.jpg" alt="Schaap 1">
+                <img src="schapenschuur.png" alt="Schaap 1 in de B&B">
             </div>
             <div class="slide fade">
-                <img src="sheep2.jpg" alt="Schaap 2">
+                <img src="schapenschuur2.png" alt="Schaap 2 in de omgeving van de B&B">
             </div>
             <div class="overlay-text">Bed and Breakfast</div>
         </div>
-    </header>
-
-    <section class="intro-box">
-        <h2>Welkom bij Bed & Breakfast De Schaapskooi</h2>
-        <p>Beleef een unieke ervaring in het hart van het platteland, omringd door schattige schapen en een gezellige sfeer! Onze kamers zijn comfortabel, rustiek en volledig ingericht om jouw verblijf onvergetelijk te maken.</p>
     </section>
 
+    <main>
+        <section class="intro-box">
+            <h2>Welkom bij Bed & Breakfast De Schapenzolder</h2>
+            <p>Beleef een unieke ervaring in het hart van het platteland, omringd door schattige schapen en een gezellige sfeer! Onze kamer is comfortabel, rustiek en volledig ingericht om jouw verblijf onvergetelijk te maken.</p>
+        </section>
+    </main>
+
     <footer class="footer">
-        <p>&copy; 2025 Bed & Breakfast De Schaapskooi. Alle rechten voorbehouden.</p>
+        <p>&copy; 2025 Bed & Breakfast De Schapenzolder. Alle rechten voorbehouden.</p>
     </footer>
 
     <script>
         let slideIndex = 0;
-        showSlides();
 
         function showSlides() {
-            let i;
             let slides = document.getElementsByClassName("slide");
-            for (i = 0; i < slides.length; i++) {
+            for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
             slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex > slides.length) { slideIndex = 1 }
             slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000);
+            setTimeout(showSlides, 9000); // Change image every 3 seconds
         }
+
+        // Initialize slideshow
+        document.addEventListener("DOMContentLoaded", showSlides);
     </script>
 </body>
+
 </html>

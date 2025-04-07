@@ -1,8 +1,14 @@
+@font-face {
+    font-family: 'AmericaCaptain';
+    src: url('AmericaCaptain.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
     background: url('mario-sheep-background.png') no-repeat center center fixed;
     background-size: cover;
-    color: #eaffea;
+    color: #7d9279;
     text-align: center;
     padding: 0;
     margin: 0;
@@ -38,7 +44,7 @@ body {
 }
 
 .nav-links li a {
-    color: #99ff99;
+    color: #7d9279;
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
@@ -53,17 +59,18 @@ body {
 
 .hero-box {
     margin: 20px auto;
-    width: 90%;
+    width: 80%;
     max-width: 1000px;
-    border-radius: 50px;
+    border-radius: 0 50px 50px 0; /* Left corners squared, right corners curved */
     overflow: hidden;
-    position: relative;
+
 }
 
 .slideshow-container {
     position: relative;
     width: 100%;
-    height: 400px;
+    max-height: 600px;
+    overflow: hidden;
 }
 
 .slide {
@@ -76,12 +83,13 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50px;
+    border-radius: 0 50px 50px 0; /* Left corners squared, right corners curved */
 }
 
 .overlay-text {
+	font-family: 'AmericaCaptain', sans-serif;
     position: absolute;
-    top: 20px;
+    top: 220px;
     left: 50%;
     transform: translateX(-50%);
     color: #ffffff;
@@ -91,13 +99,14 @@ body {
 }
 
 .intro-box {
-    margin: -20px auto 40px auto;
-    width: 90%;
-    max-width: 1000px;
-    background-color: rgba(102, 204, 102, 0.8);
-    border-radius: 0 0 50px 50px;
+    margin: -24px auto 40px auto; /* Adjusted the margin-top to lift the box */
+    width: 100%;
+    max-width: 960px;
+    background-color: #7d9279;
+    border-radius: 0 50px 50px 0; /* Left corners squared, right corners curved */
     padding: 40px 20px;
     color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adds depth */
 }
 
 .intro-box h2 {
@@ -135,10 +144,11 @@ body {
     }
 
     .intro-box h2 {
-        font-size: 28px;
-    }
-
-    .intro-box p {
         font-size: 16px;
     }
+}
+
+/* Smooth right-side curve for all containers */
+.hero-box, .intro-box {
+    border-radius: 0 50px 50px 0; /* Left corners squared, right corners curved */
 }
