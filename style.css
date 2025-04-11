@@ -1,3 +1,4 @@
+/* AmericaCaptain font */
 @font-face {
     font-family: 'AmericaCaptain';
     src: url('AmericaCaptain.ttf') format('truetype');
@@ -9,7 +10,6 @@ body {
     background: url('mario-sheep-background.png') no-repeat center center fixed;
     background-size: cover;
     color: #7d9279;
-    text-align: center;
     padding: 0;
     margin: 0;
 }
@@ -27,7 +27,7 @@ body {
 }
 
 .logo img {
-    height: 50px;
+    height: 100px;
 }
 
 .nav-links {
@@ -57,21 +57,24 @@ body {
     color: white;
 }
 
-.hero-box {
+.hero-box,
+.hero-gallery {
     margin: 20px auto;
     width: 80%;
     max-width: 1000px;
-    border-radius: 0 50px 50px 0; /* Left corners squared, right corners curved */
+    border-radius: 0 50px 50px 0;
     overflow: hidden;
-
 }
 
-.slideshow-container {
+.slideshow-container,
+.slideshow-container2 {
     position: relative;
     width: 100%;
-    max-height: 600px;
+    max-width: 1000px;
     overflow: hidden;
+    background-color: white; /* optional if image height is inconsistent */
 }
+
 
 .slide {
     display: none;
@@ -81,43 +84,99 @@ body {
 
 .slide img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0 50px 50px 0; /* Left corners squared, right corners curved */
+    height: auto; /* ← allow images to scale naturally */
+    object-fit: contain; /* or remove this line completely */
+    border-radius: 0 50px 50px 0;
+    display: block;
+    margin: 0 auto;
 }
 
+
 .overlay-text {
-	font-family: 'AmericaCaptain', sans-serif;
+    font-family: 'AmericaCaptain', sans-serif;
     position: absolute;
-    top: 220px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     color: #ffffff;
     font-size: 48px;
     font-weight: bold;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
 }
 
-.intro-box {
-    margin: -24px auto 40px auto; /* Adjusted the margin-top to lift the box */
-    width: 100%;
-    max-width: 960px;
+.box1 {
+    position: relative; /* key for positioning child elements */
+    margin: -24px auto 40px auto;
+    width: 85%;
+    max-width: 900px;
     background-color: #7d9279;
-    border-radius: 0 50px 50px 0; /* Left corners squared, right corners curved */
+    border-radius: 0 50px 50px 0;
     padding: 40px 20px;
     color: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Adds depth */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+	text-align: left;
 }
 
-.intro-box h2 {
-    font-size: 36px;
-}
 
-.intro-box p {
+.box1 p {
     font-size: 20px;
     line-height: 1.6;
-    max-width: 800px;
-    margin: auto;
+    max-width: 500px;
+	text-align: left;
+	margin-left: 30px;   /* remove default auto-centering */
+}
+
+.box1 h2 {
+    font-size: 36px;
+	text-align: left;
+	margin-left: 30px;   /* remove default auto-centering */
+}
+
+/* Now position the slideshow */
+.hero-gallery {
+    position: absolute;
+    top: 840px;         /* Moves it down into box1 */
+    right: 430px;
+    width: 300px;
+    border-radius: 0 50px 50px 0;
+    overflow: hidden;
+    z-index: 2;
+    padding: 0;
+    background: none; /* remove any white fill */
+}
+
+.hero-gallery .slide img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+    border-radius: 0 50px 50px 0;
+    background: none;
+}
+
+.slideshow-container {
+    padding: 0;
+    background: none;
+}
+
+.box2 {
+    margin: -24px auto 40px auto;
+    width: 85%;
+    max-width: 900px;
+    background-color: #FFFFFF;
+    border-radius: 0 50px 50px 0;
+    padding: 40px 20px;
+    color: #7d9279;
+	text-align: left;
+}
+
+.box2 p {
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 500px;
+	text-align: left;
 }
 
 .footer {
@@ -135,20 +194,25 @@ body {
         padding-top: 10px;
     }
 
-    .slide img, .hero-box {
-        height: auto;
-    }
+    .slide img,
+    .hero-box,
+	.hero-gallery {
+	position: static;
+	margin-top: 20px;
+	width: 100%;
+	}
 
     .overlay-text {
         font-size: 28px;
     }
 
-    .intro-box h2 {
+    .box1 h2,
+    .box2 h2 {
+        font-size: 24px;
+    }
+
+    .box1 p,
+    .box2 p {
         font-size: 16px;
     }
-}
-
-/* Smooth right-side curve for all containers */
-.hero-box, .intro-box {
-    border-radius: 0 50px 50px 0; /* Left corners squared, right corners curved */
 }

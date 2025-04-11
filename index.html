@@ -15,7 +15,7 @@
 <body>
     <header class="navbar">
         <div class="logo">
-            <img src="logo.jpg" alt="Logo van Bed & Breakfast De Schapenzolder">
+            <img src="photos/logo.png" alt="Logo van Bed & Breakfast De Schapenzolder">
         </div>
         <nav>
             <ul class="nav-links">
@@ -33,49 +33,116 @@
     <section class="hero-box">
         <div class="slideshow-container">
             <div class="slide fade">
-                <img src="schapenschuur.png" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+                <img src="photos/schapenschuur.png" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
             </div>
             <div class="slide fade">
-                <img src="schapenschuur2.png" alt="Kamer 2 in Bed & Breakfast De Schapenzolder">
+                <img src="photos/schapenschuur2.png" alt="Kamer 2 in Bed & Breakfast De Schapenzolder">
             </div>
             <div class="slide fade">
-                <img src="schapenschuur.png" alt="Schaap 1 in de B&B">
+                <img src="photos/schapenschuur.png" alt="Schaap 1 in de B&B">
             </div>
             <div class="slide fade">
-                <img src="schapenschuur2.png" alt="Schaap 2 in de omgeving van de B&B">
+                <img src="photos/schapenschuur2.png" alt="Schaap 2 in de omgeving van de B&B">
             </div>
             <div class="overlay-text">Bed and Breakfast</div>
         </div>
     </section>
 
     <main>
-        <section class="intro-box">
+        <section class="box1">
             <h2>Welkom bij Bed & Breakfast De Schapenzolder</h2>
             <p>Beleef een unieke ervaring in het hart van het platteland, omringd door schattige schapen en een gezellige sfeer! Onze kamer is comfortabel, rustiek en volledig ingericht om jouw verblijf onvergetelijk te maken.</p>
         </section>
     </main>
+	
+	 <section class="hero-gallery">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="photos/room1.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room2.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room3.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room4.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room5.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room6.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room7.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room8.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room9.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room10.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room11.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room12.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+			<div class="slide fade">
+                <img src="photos/room13.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+            </div>
+        </div>
+    </section>
+	
+	
+	<main>
+        <section class="box2">
+            <p>	
+			Uw kamer beslaat een hele verdieping, heeft een eigen ingang en is stijlvol ingericht met de mooist denkbare bed and breakfast in gedachten. 
+			Voor ons betekent dat comfortabele bedden, zachte handdoeken, een compleet ingerichte kleine keuken, goede koffie, een aparte zithoek met een box om uw eigen muziek af te spelen en gratis wifi.
 
+			Wij hanteren een minimumverblijf van 2 nachten, zodat u optimaal kunt genieten van de rust en comfort die wij bieden.
+			
+			
+			Wilt u bij ons overnachten neem dan contact op met 
+			Erwin & Jolanda van Dongen via info@bedandbreakfastgouda.nl 
+			of bel ons op nummer 06 23 98 32 35.   
+			</p>
+	     </section>
+    </main>
+	
     <footer class="footer">
         <p>&copy; 2025 Bed & Breakfast De Schapenzolder. Alle rechten voorbehouden.</p>
     </footer>
 
-    <script>
-        let slideIndex = 0;
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const slideshows = document.querySelectorAll(".slideshow-container");
 
-        function showSlides() {
-            let slides = document.getElementsByClassName("slide");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+        slideshows.forEach((slideshow) => {
+            let index = 0;
+            const slides = slideshow.querySelectorAll(".slide");
+
+            function showSlides() {
+                slides.forEach((slide) => {
+                    slide.style.display = "none";
+                });
+                index++;
+                if (index > slides.length) index = 1;
+                slides[index - 1].style.display = "block";
+                setTimeout(showSlides, 9000);
             }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 9000); // Change image every 3 seconds
-        }
 
-        // Initialize slideshow
-        document.addEventListener("DOMContentLoaded", showSlides);
-    </script>
+            showSlides(); // Start slideshow for this container
+        });
+    });
+</script>
+
 </body>
 
 </html>
