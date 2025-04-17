@@ -36,6 +36,36 @@
             </p>
         </section>
 
+        <section class="culemborg-slideshow-section">
+            <div class="slideshow-container culemborg-slideshow">
+                <div class="slides-wrapper">
+                    <div class="slide"><img src="photos/culemborg (1).jpg" alt="Culemborg 1"></div>
+                    <div class="slide"><img src="photos/culemborg (2).jpg" alt="Culemborg 2"></div>
+                    <div class="slide"><img src="photos/culemborg (3).jpg" alt="Culemborg 3"></div>
+                    <div class="slide"><img src="photos/culemborg (4).jpg" alt="Culemborg 4"></div>
+                    <div class="slide"><img src="photos/culemborg (5).jpg" alt="Culemborg 5"></div>
+                    <div class="slide"><img src="photos/culemborg (6).jpg" alt="Culemborg 6"></div>
+                    <div class="slide"><img src="photos/culemborg (7).jpg" alt="Culemborg 7"></div>
+                    <div class="slide"><img src="photos/culemborg (8).jpg" alt="Culemborg 8"></div>
+                    <div class="slide"><img src="photos/culemborg (9).jpg" alt="Culemborg 9"></div>
+                    <div class="slide"><img src="photos/culemborg (10).jpg" alt="Culemborg 10"></div>
+                    <div class="slide"><img src="photos/culemborg (11).jpg" alt="Culemborg 11"></div>
+                    <div class="slide"><img src="photos/culemborg (12).jpg" alt="Culemborg 12"></div>
+                    <div class="slide"><img src="photos/culemborg (13).jpg" alt="Culemborg 13"></div>
+                    <div class="slide"><img src="photos/culemborg (14).jpg" alt="Culemborg 14"></div>
+                    <div class="slide"><img src="photos/culemborg (15).jpg" alt="Culemborg 15"></div>
+                    <div class="slide"><img src="photos/culemborg (16).jpg" alt="Culemborg 16"></div>
+                    <div class="slide"><img src="photos/culemborg (17).jpg" alt="Culemborg 17"></div>
+                    <div class="slide"><img src="photos/culemborg (18).jpg" alt="Culemborg 18"></div>
+                    <div class="slide"><img src="photos/culemborg (19).jpg" alt="Culemborg 19"></div>
+                    <div class="slide"><img src="photos/culemborg (20).jpg" alt="Culemborg 20"></div>
+                    <div class="slide"><img src="photos/culemborg (21).jpg" alt="Culemborg 21"></div>
+                    <div class="slide"><img src="photos/culemborg (22).jpg" alt="Culemborg 22"></div>
+                </div>
+                <div class="slideshow-indicators"></div>
+            </div>
+        </section>
+
         <section>
             <h2>Buitengebied</h2>
             <h3>Stadspark</h3>
@@ -57,9 +87,6 @@
             <p>
                 Insider tip: Begin bij Caatje aan de Lek voor een heerlijke lunch of koffie. Dit restaurant is gevestigd in het Forthuis op Werk aan het Spoel, met een prachtig uitzicht op de uiterwaarden.
             </p>
-            <p>
-                <img src="photos/dijk_liniepont.jpg" alt="Dijk en Liniepont">
-            </p>
         </section>
 
         <section>
@@ -71,8 +98,64 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Bed & Breakfast De Schapenzolder</p>
+        <p>&copy; 2025 Bed & Breakfast De Schapenzolder</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const culemborgSlideshow = document.querySelector(".culemborg-slideshow");
+
+            // Function to initialize slideshow
+            function initSlideshow(slideshow) {
+                const wrapper = slideshow.querySelector(".slides-wrapper");
+                const slides = slideshow.querySelectorAll(".slide");
+                const indicatorsContainer = slideshow.querySelector(".slideshow-indicators");
+                let index = 0;
+                const slideWidth = slides[0].offsetWidth;
+                let autoSlideInterval;
+
+                // Create indicators
+                slides.forEach((_, i) => {
+                    const indicator = document.createElement("div");
+                    indicator.classList.add("slideshow-indicator");
+                    indicator.addEventListener("click", () => {
+                        index = i;
+                        updateSlide();
+                        resetAutoSlide();
+                    });
+                    indicatorsContainer.appendChild(indicator);
+                });
+
+                const indicators = indicatorsContainer.querySelectorAll(".slideshow-indicator");
+
+                function updateSlide() {
+                    wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+                    indicators.forEach((indicator, i) => {
+                        indicator.classList.toggle("active", i === index);
+                    });
+                }
+
+                function autoSlide() {
+                    index++;
+                    if (index >= slides.length) {
+                        index = 0;
+                    }
+                    updateSlide();
+                }
+
+                function resetAutoSlide() {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = setInterval(autoSlide, 9000);
+                }
+
+                updateSlide();
+                resetAutoSlide();
+            }
+
+            // Initialize both slideshows
+            if (culemborgSlideshow) initSlideshow(culemborgSlideshow);
+        });
+    </script>
 </body>
 
 </html>

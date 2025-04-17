@@ -258,11 +258,64 @@ body {
 	text-align: left;
 }
 
+.culemborg-slideshow-section {
+    width: 80%; /* of de gewenste breedte */
+    max-width: 800px; /* of de gewenste maximale breedte */
+    margin: 20px auto; /* centreren van de sectie */
+    overflow: hidden; /* Zorg ervoor dat de slideshow niet buiten de container uitsteekt */
+}
+
+.culemborg-slideshow .slides-wrapper {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.culemborg-slideshow .slide {
+    flex-shrink: 0;
+    width: 100%; /* Elke slide neemt de volledige breedte van de container in beslag */
+    position: relative; /* Nodig voor het centreren van de afbeelding */
+    padding-bottom: 100%; /* Zorgt voor een vierkante verhouding (hoogte = breedte) */
+}
+
+.culemborg-slideshow .slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zorgt ervoor dat de afbeelding de container vult en wordt bijgesneden */
+}
+
+.culemborg-slideshow .slideshow-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.culemborg-slideshow .slideshow-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.culemborg-slideshow .slideshow-indicator.active {
+    background-color: #ccc;
+}
+
+
+
 .footer {
     margin-top: 50px;
     font-size: 14px;
     color: #ccffcc;
 }
+
+
 
 @media (max-width: 768px) {
     .nav-links {
