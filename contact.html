@@ -50,7 +50,30 @@
         </section>
     </main>
 
+    <script>
+        // FormSubmit response verbergen door lokaal af te handelen
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // voorkom standaard redirect
+            const form = event.target;
 
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset();
+                    document.getElementById("bevestiging").style.display = "block";
+                } else {
+                    alert("Er ging iets mis. Probeer het opnieuw.");
+                }
+            }).catch(error => {
+                alert("Fout bij verzenden. Controleer uw verbinding.");
+            });
+        });
+    </script>
 	
     <footer>
         <p>&copy; 2025 Jouw Website. Alle rechten voorbehouden.</p>
