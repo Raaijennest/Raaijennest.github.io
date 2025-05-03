@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Jouw Website</title>
+    <link rel="stylesheet" href="style.css"> <!-- Zorg dat je een stylesheet hebt -->
+</head>
+
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="photos/logo.png" alt="Logo van Bed & Breakfast De Schapenzolder">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="prijs.html">Prijs</a></li>
+                <li><a href="agenda.html">Kalender</a></li>
+                <li><a href="recensies.html" class="active">Recensies</a></li>
+                <li><a href="omgeving.html">Omgeving</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<main>
+        <section>
+            <p>Heeft u een vraag of opmerking? Vul het formulier in en wij nemen zo spoedig mogelijk contact met u op.</p>
+
+            <form id="contactForm" action="https://formsubmit.co/schapenzolder@gmail.com" method="POST">
+                <label for="naam">Naam:</label>
+                <input type="text" id="naam" name="naam" required>
+
+                <label for="email">E-mailadres:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="bericht">Bericht:</label>
+                <textarea id="bericht" name="bericht" rows="6" required></textarea>
+
+                <!-- FormSubmit instellingen -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <button type="submit">Verstuur</button>
+            </form>
+
+            <p id="bevestiging">Bedankt! Uw bericht is succesvol verzonden.</p>
+        </section>
+    </main>
+
+    <script>
+        // FormSubmit response verbergen door lokaal af te handelen
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // voorkom standaard redirect
+            const form = event.target;
+
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset();
+                    document.getElementById("bevestiging").style.display = "block";
+                } else {
+                    alert("Er ging iets mis. Probeer het opnieuw.");
+                }
+            }).catch(error => {
+                alert("Fout bij verzenden. Controleer uw verbinding.");
+            });
+        });
+    </script>
+	
+    <footer>
+        <p>&copy; 2025 Jouw Website. Alle rechten voorbehouden.</p>
+    </footer>
+
+</body>
+</html>
