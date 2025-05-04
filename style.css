@@ -1,7 +1,8 @@
 /* AmericaCaptain font */
 @font-face {
     font-family: 'AmericaCaptain';
-    src: url('AmericaCaptain.ttf') format('truetype');
+    src: url('https://github.com/Raaijennest/Raaijennest.github.io/blob/main/AmericaCaptain.ttf') format('truetype');
+	font-display: swap;
     font-weight: normal;
     font-style: normal;
 }
