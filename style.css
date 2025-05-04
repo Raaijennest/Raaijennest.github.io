@@ -10,6 +10,7 @@
 @font-face {
   font-family: 'Comic Sans MS Custom';
   src: url('https://github.com/Raaijennest/Raaijennest.github.io/blob/main/Comic%20Sans%20MS.ttf') format('truetype');
+  font-display: swap;
   font-weight: normal;
   font-style: normal;
 }
