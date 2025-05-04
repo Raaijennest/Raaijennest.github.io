@@ -315,36 +315,70 @@ body {
     color: #7d9279;
 }
 
-
+#bevestiging {
+    display: none;
+    margin-top: 1em;
+    color: green;
+    font-weight: bold;
+}
 
 @media (max-width: 768px) {
-    .nav-links {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding-top: 10px;
+    .logo img {
+        height: 60px;
     }
 
-    .slide img,
     .hero-box,
-	.hero-gallery {
-	position: static;
-	margin-top: 20px;
-	width: 100%;
-	}
-
-    .overlay-text {
-        font-size: 28px;
+    .box1,
+    .box2 {
+        width: 95%;
+        border-radius: 20px;
+        padding: 20px;
     }
 
-    .box1 h2,
-    .box2 h2 {
+    .hero-box .overlay-text,
+    .overlay-text {
         font-size: 24px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .slide img {
+        height: auto;
+        max-height: 300px;
+    }
+
+    .hero-gallery {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+        right: auto;
+        top: auto;
+        border-radius: 20px;
     }
 
     .box1 p,
-    .box2 p {
-        font-size: 16px;
+    .box2 p,
+    .box1 h2 {
+        font-size: 18px;
+        margin-left: 10px;
+        max-width: 100%;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .culemborg-slideshow-section {
+        width: 95%;
+    }
+
+    .culemborg-slideshow .slide {
+        padding-bottom: 80%;
+    }
+
+    .culemborg-slideshow .slide img {
+        object-fit: cover;
     }
 }
+
