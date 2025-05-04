@@ -43,6 +43,58 @@
 
         <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FAmsterdam&showPrint=0&showDate=0&showCalendars=0&showTitle=0&mode=MONTH&showTabs=0&src=ZGVzY2hhcGVuem9sZGVyQGdtYWlsLmNvbQ&src=bmwuZHV0Y2gjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%230B8043" style="border-width:0" width="1000" height="800" frameborder="0" scrolling="no"></iframe>
 
+		<h2>Reserveren</h2>
+		<p>Vul je gegevens in om een reservering aan te vragen. De aanvraag wordt automatisch als ‘onder voorbehoud’ toegevoegd aan onze kalender.</p>
+
+		<form id="reserveringForm">
+			<label>Naam:
+				<input type="text" name="naam" required>
+			</label><br><br>
+
+			<label>E-mailadres:
+				<input type="email" name="email" required>
+			</label><br><br>
+
+			<label>Gewenste aankomstdatum:
+				<input type="date" name="datum" required>
+			</label><br><br>
+
+			<label>Opmerkingen / wensen:<br>
+				<textarea name="opmerkingen" rows="6" style="width:100%;" placeholder="Bijv. aantal personen, dieetwensen..."></textarea>
+			</label><br><br>
+
+			<button type="submit">Verstuur reservering</button>
+		</form>
+
+		<div id="status"></div>
+
+		<script>
+		document.getElementById('reserveringForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+
+			const formData = {
+				naam: this.naam.value,
+				email: this.email.value,
+				datum: this.datum.value,
+				opmerkingen: this.opmerkingen.value
+			};
+
+			fetch('https://script.google.com/macros/s/AKfycbwuuz2lY8bpAYtSuKwOf6tWC16PVvgwK-TlX9xbhUPfCejTvTKPd5LLmO27WHh1NRcN/exec', {
+				method: 'POST',
+				body: JSON.stringify(formData)
+			})
+			.then(response => response.text())
+			.then(data => {
+				document.getElementById('status').innerHTML = '✅ Reservering verstuurd! We nemen contact op. De datum is onder voorbehoud gereserveerd.';
+				this.reset();
+			})
+			.catch(error => {
+				document.getElementById('status').innerHTML = '❌ Er ging iets mis. Probeer opnieuw.';
+				console.error('Error:', error);
+			});
+		});
+		</script>
+
     </main>
 
     <footer>
