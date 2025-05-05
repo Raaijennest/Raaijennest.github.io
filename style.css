@@ -1,18 +1,23 @@
-/* AmericaCaptain font */
+/* -------------------------------
+   Fonts
+-------------------------------- */
 @font-face {
     font-family: 'AmericaCaptain';
-    src: url('https://github.com/Raaijennest/Raaijennest.github.io/blob/main/AmericaCaptain.ttf') format('truetype');
-	font-display: swap;
-    font-weight: normal;
-    font-style: normal;
+    src: url('https://raw.githubusercontent.com/Raaijennest/Raaijennest.github.io/main/AmericaCaptain.ttf') format('truetype');') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Comic Sans MS Custom';
-  src: url('https://github.com/Raaijennest/Raaijennest.github.io/blob/main/Comic%20Sans%20MS.ttf') format('truetype');
-  font-display: swap;
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Comic Sans MS Custom';
+    src: url('https://raw.githubusercontent.com/Raaijennest/Raaijennest.github.io/blob/main/Comic%20Sans%20MS.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* -------------------------------
+   Base Styles
+-------------------------------- */
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -21,8 +26,16 @@ body {
     color: #7d9279;
     padding: 0;
     margin: 0;
+	font-family: 'Comic Sans MS Custom', cursive, sans-serif;
 }
 
+p, ul, h2 {
+    font-family: 'Comic Sans MS Custom', cursive, sans-serif;
+}
+
+/* -------------------------------
+   Navigation
+-------------------------------- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -42,17 +55,11 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
     gap: 15px;
     margin: 0;
     padding: 0;
 }
-
-.nav-links li {
-    display: inline;
-}
-
-.nav-links li a {
+.nav-links a {
     color: #7d9279;
     text-decoration: none;
     font-weight: bold;
@@ -60,241 +67,211 @@ body {
     border-radius: 5px;
     transition: background 0.3s;
 }
-
-.nav-links li a:hover {
-    background-color: #66cc66;
+.nav-links a:hover {
+    background: #66cc66;
     color: white;
 }
 
-.hero-gallery {
-    margin: 20px auto;
-    width: 80%;
-    max-width: 1000px;
-    border-radius: 0 50px 50px 0;
-    overflow: hidden;
+/* -------------------------------
+   Section Wrappers
+-------------------------------- */
+.section-wrapper {
+    position: relative;
+    overflow: visible;
+    padding: 4rem 2rem 6rem; /* extra bottom padding voor slide overflow */
+}
+.section-wrapper.green-bg {
+    background: #7d9279;
+    color: white;
+}
+.section-wrapper.white-bg {
+    background: white;
+    color: #7d9279;
 }
 
-.hero-box {
-    position: relative; /* Needed for absolute positioning of overlay text */
-    margin: 20px auto;
-    width: 80%;
-    max-width: 1000px;
-    border-radius: 0 50px 50px 0;
-    overflow: hidden;
-}
+/* -------------------------------
+   Section Content Layout
+-------------------------------- */
 
-.hero-box .slideshow-container {
-    position: relative; /* Needed for positioning slides and overlay */
-    width: 100%;
-    overflow: hidden;
-}
-
-.hero-box .slides-wrapper {
+.section-wrapper .text-slideshow-container {
     display: flex;
-    transition: transform 1s ease-in-out; /* Smooth transition */
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+	
+}
+.section-wrapper .textbox {
+    flex: 1 1 45%;
+    min-width: 280px;
+}
+.section-wrapper .textbox h2 {
+    margin-top: 0;
+    font-size: 2rem;
 }
 
-.hero-box .slide {
-    flex-shrink: 0;
-    width: 100%; /* Ensure each slide takes full width */
+/* -------------------------------
+   Hero Banner (bovenkant pagina)
+-------------------------------- */
+.banner {
+    padding: 0;
 }
-
-.hero-box .slide img {
-    width: 100%;
-    height: 400px; /* Set a fixed height */
-    object-fit: cover;
-    display: block;
+.banner .slideshow-container {
+    margin: 0;
+    height: 500px;
+    margin-bottom: -4rem;
 }
-
-.hero-box .overlay-text {
+.banner .slides-wrapper,
+.banner .slide img {
+    height: 500px;
+}
+.banner .overlay-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #D3D3D3;
-    font-size: 48px;
-    font-weight: bold;
-    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+    font-family: 'AmericaCaptain', sans-serif;
+    font-size: 3rem;
     text-align: center;
-    z-index: 10; /* Ensure it's on top */
+    color: #D3D3D3;
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+    z-index: 2;
 }
 
-.slideshow-container,
-.slideshow-container2 {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    overflow: hidden;
-    background-color: white; /* optional if image height is inconsistent */
+
+/* -------------------------------
+   Content Boxes
+-------------------------------- */
+.textbox {
+    margin: -24px auto 40px auto;
+    width: 85%;
+    max-width: 960px;
+    padding: 40px 20px;
+    text-align: left;
+    border-radius: 0 50px 50px 0;
 }
+
+.textbox p{
+    font-size: 20px;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-left: 30px;
+}
+
+.textbox h2 {
+    font-size: 36px;
+    margin-left: 30px;
+}
+
+
+/* -------------------------------
+   Text & Headings
+-------------------------------- */
+
+
+/* -------------------------------
+   Images
+-------------------------------- */
+.circle-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* -------------------------------
+   Hero Slideshow
+-------------------------------- */
 
 .slideshow-container {
     position: relative;
-    width: 100%;
+    flex: 1 1 50%;
+    min-width: 300px;
+    max-width: 100%;
     overflow: hidden;
+    background-color: white;
+    border-radius: 0 50px 50px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Slides wrapper */
+.slides-wrapper {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 100%;
+}
+
+/* Each individual slide */
 .slide {
     flex-shrink: 0;
-    width: 100%; /* Ensure each slide takes full width */
+    width: 100%;
 }
 
 .slide img {
     width: 100%;
-    height: auto;
-    object-fit: cover; /* Wijziging: gebruik 'cover' om de afbeeldingen de container te laten vullen */
+    height: 100%;
+    object-fit: cover;
     display: block;
     border-radius: 0 50px 50px 0;
 }
 
+/* Indicator dots */
 .slideshow-indicators {
     position: absolute;
-    bottom: 10px;
+    bottom: 12px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
+    gap: 8px;
+    z-index: 10;
 }
 
 .slideshow-indicator {
     width: 12px;
     height: 12px;
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 50%;
-    background-color: white;
-    margin: 0 5px;
     cursor: pointer;
+    transition: opacity 0.3s;
 }
 
 .slideshow-indicator.active {
-    background-color: #ccc;
+    background: white;
+    opacity: 1;
 }
 
-.overlay-text {
-    font-family: 'AmericaCaptain', sans-serif;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #D3D3D3;
-    font-size: 48px;
-    font-weight: bold;
-    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
-	text-align: middle;
+/* Reverse for white containers*/
+.section-wrapper.white-bg .text-slideshow-container {
+    flex-direction: row-reverse;
 }
 
-.box1 {
-    position: relative; /* key for positioning child elements */
-    margin: -24px auto 40px auto;
-    width: 85%;
-    max-width: 960px;
-    background-color: #7d9279;
-    border-radius: 0 50px 50px 0;
-    padding: 40px 20px;
-    color: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-	text-align: left;
+/* Make images smaller in text containers*/
+.text-slideshow-container .slideshow-container {
+    max-width: 300px;         /* Adjust size as needed */
+    max-height: 400px;
+    flex: 0 0 auto;           /* Prevent stretching */
+	position: relative;
+    margin-bottom: -150px; /* Push image up or down to overlap */
+    z-index: 1;
 }
 
- p, ul, h2 {
-    font-family: 'Comic Sans MS Custom', cursive, sans-serif ;
-  }
-  
-
-
-.box1 p {
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 500px;
-	text-align: left;
-	margin-left: 30px;   /* remove default auto-centering */
-}
-
-.box1 h2 {
-    font-size: 36px;
-	text-align: left;
-	margin-left: 30px;   /* remove default auto-centering */
-}
-
-/* Now position the slideshow */
-.hero-gallery {
-    position: absolute;
-    top: 750px;         /* Moves it down into box1 */
-    right: 430px;
-    width: 300px;
-    border-radius: 0 50px 50px 0;
-    overflow: hidden;
-    z-index: 2;
-    padding: 0;
-    background: none; /* remove any white fill */
-}
-
-.hero-gallery .slide img {
-    max-width: 100%;
-    width: 100%;
+.text-slideshow-container .slide img {
+    max-height: none; /* Remove max-height if previously set */
     height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0;
-    border-radius: 0 50px 50px 0;
-    background: none;
-}
-
-.slideshow-container {
-    position: relative;
     width: 100%;
-    overflow: hidden;
+    object-fit: cover;
 }
 
-.slides-wrapper {
-    display: flex;
-    transition: transform 1s ease-in-out; /* Smooth transition */
-}
-
-.box2 {
-    margin: -24px auto 40px auto;
-    width: 85%;
-    max-width: 900px;
-    background-color: #FFFFFF;
-    border-radius: 0 50px 50px 0;
-    padding: 40px 20px;
-    color: #7d9279;
-	text-align: left;
-}
-
-.box2 p {
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 500px;
-	text-align: left;
-}
-
-.culemborg-slideshow-section {
-    width: 80%; /* of de gewenste breedte */
-    max-width: 800px; /* of de gewenste maximale breedte */
-    margin: 20px auto; /* centreren van de sectie */
-    overflow: hidden; /* Zorg ervoor dat de slideshow niet buiten de container uitsteekt */
-}
-
-.culemborg-slideshow .slides-wrapper {
-    display: flex;
-    transition: transform 1s ease-in-out;
-}
-
-.culemborg-slideshow .slide {
-    flex-shrink: 0;
-    width: 100%; /* Elke slide neemt de volledige breedte van de container in beslag */
-    position: relative; /* Nodig voor het centreren van de afbeelding */
-    padding-bottom: 100%; /* Zorgt voor een vierkante verhouding (hoogte = breedte) */
-}
-
-.culemborg-slideshow .slide img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Zorgt ervoor dat de afbeelding de container vult en wordt bijgesneden */
-}
-
+/* -------------------------------
+   Slideshow Indicators
+-------------------------------- */
+.slideshow-indicators,
 .culemborg-slideshow .slideshow-indicators {
     position: absolute;
     bottom: 10px;
@@ -303,6 +280,7 @@ body {
     display: flex;
 }
 
+.slideshow-indicator,
 .culemborg-slideshow .slideshow-indicator {
     width: 12px;
     height: 12px;
@@ -312,12 +290,45 @@ body {
     cursor: pointer;
 }
 
+.slideshow-indicator.active,
 .culemborg-slideshow .slideshow-indicator.active {
     background-color: #ccc;
 }
 
+/* -------------------------------
+   Culemborg Slideshow
+-------------------------------- */
+.culemborg-slideshow-section {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+}
 
+.culemborg-slideshow .slides-wrapper {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
 
+.culemborg-slideshow .slide {
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.culemborg-slideshow .slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* -------------------------------
+   Footer & Form
+-------------------------------- */
 .footer {
     margin-top: 50px;
     font-size: 14px;
@@ -331,51 +342,46 @@ body {
     font-weight: bold;
 }
 
+/* -------------------------------
+   Responsive (Mobile) Styles
+-------------------------------- */
 @media (max-width: 768px) {
     .logo img {
         height: 60px;
     }
 
-    .hero-box,
-    .box1,
-    .box2 {
+    .section-wrapper banner,
+    .textbox1,
+    .textbox2 {
         width: 95%;
         border-radius: 20px;
         padding: 20px;
     }
 
-    .hero-box .overlay-text,
     .overlay-text {
         font-size: 24px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     }
 
     .slide img {
-        height: auto;
         max-height: 300px;
     }
 
     .hero-gallery {
         position: relative;
         width: 100%;
-        max-width: 100%;
         margin-top: 20px;
-        right: auto;
-        top: auto;
         border-radius: 20px;
+        top: auto;
+        right: auto;
     }
 
-    .box1 p,
-    .box2 p,
-    .box1 h2 {
+    .textbox1 p,
+    .textbox2 p,
+    .textbox1 h2 {
         font-size: 18px;
         margin-left: 10px;
         max-width: 100%;
-    }
-
-    .nav-links {
-        justify-content: center;
-        gap: 8px;
     }
 
     .culemborg-slideshow-section {
@@ -385,9 +391,16 @@ body {
     .culemborg-slideshow .slide {
         padding-bottom: 80%;
     }
+	
+	.section-container {
+        flex-direction: column;
+    }
 
-    .culemborg-slideshow .slide img {
-        object-fit: cover;
+    .section-container textbox1,
+	.section-container textbox2,
+	.section-container textbox3,
+	.section-container textbox4,
+    .section-container .hero-gallery {
+        flex: 1 1 100%;
     }
 }
-
