@@ -19,11 +19,13 @@ body {
     color: #7d9279;
     padding: 0;
     margin: 0;
-	font-family: 'Comic Sans MS', cursive, sans-serif;
+	font-family: 'Comic Neue', cursive, sans-serif;
+
 }
 
 p, ul, h2 {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-family: 'Comic Neue', cursive, sans-serif;
+
 }
 
 /* -------------------------------
