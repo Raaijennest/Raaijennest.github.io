@@ -19,12 +19,12 @@ body {
     color: #7d9279;
     padding: 0;
     margin: 0;
-	font-family: "Patrick Hand", cursive, sans-serif;
+	font-family: 'Patrick Hand', cursive, sans-serif;
 
 }
 
 p, ul, h2 {
-    font-family: "Patrick Hand", cursive, sans-serif;
+    font-family: 'Patrick Hand', cursive, sans-serif !important;
 
 }
 
