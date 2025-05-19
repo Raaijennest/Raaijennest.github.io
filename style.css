@@ -364,16 +364,18 @@ p, ul, h2 {
     }
 
     /* Hero slideshow responsiveness */
-    .banner .slideshow-container {
-        height: 280px;
-    }
+	.banner .slideshow-container {
+		aspect-ratio: 16 / 9;
+		max-height: 60vh;
+	}
 
-    .banner .slides-wrapper,
-    .banner .slide img {
-        height: 280px;
-        object-fit: cover;
-        object-position: center center;
-    }
+	.banner .slides-wrapper,
+	.banner .slide img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		object-position: top center; /* or: center 40% if you want to see more grass/sky */
+	}
 
     .slide img {
         max-height: 300px;
