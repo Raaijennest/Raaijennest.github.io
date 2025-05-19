@@ -345,7 +345,8 @@ p, ul, h2 {
         height: 60px;
     }
 
-    .section-wrapper banner,
+    /* Ensure sections are responsive */
+    .section-wrapper.banner,
     .textbox1,
     .textbox2 {
         width: 95%;
@@ -354,14 +355,53 @@ p, ul, h2 {
     }
 
     .overlay-text {
-        font-size: 24px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        font-size: 20px;
+        text-align: center;
+        padding: 0 10px;
+        word-break: break-word;
+    }
+
+    /* Hero slideshow responsiveness */
+    .banner .slideshow-container {
+        height: 280px;
+    }
+
+    .banner .slides-wrapper,
+    .banner .slide img {
+        height: 280px;
+        object-fit: cover;
+        object-position: center center;
     }
 
     .slide img {
         max-height: 300px;
     }
 
+    /* Navbar mobile fix */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+    }
+
+    /* Hero gallery fix */
     .hero-gallery {
         position: relative;
         width: 100%;
@@ -371,6 +411,7 @@ p, ul, h2 {
         right: auto;
     }
 
+    /* Textboxes */
     .textbox1 p,
     .textbox2 p,
     .textbox1 h2 {
@@ -379,23 +420,24 @@ p, ul, h2 {
         max-width: 100%;
     }
 
+    .section-container {
+        flex-direction: column;
+    }
+
+    .section-container .textbox1,
+    .section-container .textbox2,
+    .section-container .textbox3,
+    .section-container .textbox4,
+    .section-container .hero-gallery {
+        flex: 1 1 100%;
+    }
+
+    /* Slideshow for culemborg */
     .culemborg-slideshow-section {
         width: 95%;
     }
 
     .culemborg-slideshow .slide {
         padding-bottom: 80%;
-    }
-	
-	.section-container {
-        flex-direction: column;
-    }
-
-    .section-container textbox1,
-	.section-container textbox2,
-	.section-container textbox3,
-	.section-container textbox4,
-    .section-container .hero-gallery {
-        flex: 1 1 100%;
     }
 }
