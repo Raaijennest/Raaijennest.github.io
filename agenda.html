@@ -55,8 +55,12 @@
 				<input type="email" name="email" required>
 			</label><br><br>
 
-			<label>Gewenste aankomstdatum:
-				<input type="date" name="datum" required>
+			<label>Begin datum:
+				<input type="date" name="begindatum" required>
+			</label><br><br>
+
+			<label>Eind datum:
+				<input type="date" name="einddatum" required>
 			</label><br><br>
 
 			<label>Opmerkingen / wensen:<br>
@@ -72,21 +76,27 @@
 		document.getElementById('reserveringForm').addEventListener('submit', function(e) {
 			e.preventDefault();
 
+			const form = this;
+
 			const formData = {
-				naam: this.naam.value,
-				email: this.email.value,
-				datum: this.datum.value,
-				opmerkingen: this.opmerkingen.value
+				naam: form.naam.value,
+				email: form.email.value,
+				begindatum: form.begindatum.value,
+				einddatum: form.einddatum.value,
+				opmerkingen: form.opmerkingen.value
 			};
 
 			fetch('https://script.google.com/macros/s/AKfycbxyU_cO2yP6kbrIcwKlEYcjeII_r0OENiocLleEwIc-mUxMpWF6dmK859lv3EFrcTBH/exec', {
 				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
 				body: JSON.stringify(formData)
 			})
 			.then(response => response.text())
 			.then(data => {
-				document.getElementById('status').innerHTML = '✅ Reservering verstuurd! We nemen contact op. De datum is onder voorbehoud gereserveerd.';
-				this.reset();
+				document.getElementById('status').innerHTML = '✅ Reservering verstuurd! We nemen contact op. De data zijn onder voorbehoud gereserveerd.';
+				form.reset();
 			})
 			.catch(error => {
 				document.getElementById('status').innerHTML = '❌ Er ging iets mis. Probeer opnieuw.';
@@ -94,6 +104,7 @@
 			});
 		});
 		</script>
+
 
     </main>
 
