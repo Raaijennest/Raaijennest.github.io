@@ -401,6 +401,7 @@ p, ul, h2 {
     .nav-links a {
         display: block;
         width: 100%;
+		font-size: 1rem;
     }
 
     /* Hero gallery fix */
