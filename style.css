@@ -41,6 +41,7 @@ p, ul, h2 {
     top: 0;
     z-index: 10;
     flex-wrap: wrap;
+	
 }
 
 .logo img {
@@ -61,6 +62,7 @@ p, ul, h2 {
     padding: 8px 12px;
     border-radius: 5px;
     transition: background 0.3s;
+	font-size: 2rem;
 }
 .nav-links a:hover {
     background: #66cc66;
