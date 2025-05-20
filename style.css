@@ -23,9 +23,14 @@ body {
 
 }
 
-p, ul, h2 {
+p, ul, h2, h3 {
     font-family: 'Patrick Hand', cursive, sans-serif !important;
+	padding-left: 50px; /* or use margin-left */
 
+}
+
+h1 {
+	padding-left: 10px; /* or use margin-left */
 }
 
 /* -------------------------------
