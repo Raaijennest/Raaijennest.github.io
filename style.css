@@ -74,15 +74,16 @@ h1 {
 }
 
 .reserveren-knop {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+    padding: 10px 20px; /* bigger button */
+    background-color: #66cc66;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 28px;
     cursor: pointer;
     margin-left: 50px; /* schuift de knop naar rechts */
     transition: background-color 0.3s ease;
+	font-family: 'Patrick Hand', cursive, sans-serif !important;
   }
 
 .reserveren-knop:hover {
