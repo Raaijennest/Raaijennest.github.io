@@ -23,7 +23,7 @@ body {
 
 }
 
-p, ul, h2, h3 {
+p, ul, h2, h3, input {
     font-family: 'Patrick Hand', cursive, sans-serif !important;
 	padding-left: 50px; /* or use margin-left */
 
