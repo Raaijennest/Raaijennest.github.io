@@ -11,6 +11,7 @@ Ontbijt index.html uithalen en onder de text bij "heerlijk ontbijt" X
 Dikdrukken woorden bij prijs.html X
 navbar: kalender = reserveren en recensies laatste X
 agenda2025 -> naar omgeving.html en hernoemd naar activiteiten culemborg 2025 X
+
 reserveren -> 
 > maak contact container (zoals bij gouda) KVK 97293008 + 
 > telefoonnummer (niet verplicht) toevoegen aan form. 
