@@ -26,7 +26,6 @@ body {
 p, ul, h2, h3, li {
     font-family: 'Patrick Hand', cursive, sans-serif !important;
 	padding-left: 50px; /* or use margin-left */
-
 }
 
 h1 {
@@ -74,6 +73,21 @@ h1 {
     color: white;
 }
 
+.reserveren-knop {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 50px; /* schuift de knop naar rechts */
+    transition: background-color 0.3s ease;
+  }
+
+.reserveren-knop:hover {
+    background-color: #388E3C; /* donkerdere groene tint bij hover */
+  }
 /* -------------------------------
    Section Wrappers
 -------------------------------- */
