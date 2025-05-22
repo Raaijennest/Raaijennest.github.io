@@ -390,13 +390,19 @@ h1 {
     }
 
     /* Ensure sections are responsive */
-    .section-wrapper.banner,
     .textbox1,
     .textbox2 {
         border-radius: 20px;
         padding: 20px;
-		width: 100%
+		width: 100%;
+		background: #FF0000
     }
+	
+	.section-wrapper.banner {
+		background: #FF0000;        /* for testing */
+		padding: 0;
+		margin: 0;
+	  }
 
     .overlay-text {
         font-size: 20px;
@@ -412,8 +418,9 @@ h1 {
 		overflow: hidden;
 		position: relative;
 		margin-top: -20px;
-		margin-left: -20px;
+
 		height: 400px; /* 👈 limit the container height to crop the image */
+		
 	}
 
 	.banner .slides-wrapper {
@@ -428,11 +435,14 @@ h1 {
 	
 	.banner .slide img {
 		height: 120%; /* Zoom a little to allow crop flexibility */
+		max-width: 100%;
+		width: 100%;
 		margin-top: -250px;
 		display: block;
 		object-fit: cover;
 		border-radius: 0 0 50px 50px;
 		object-position: center 20%; /* 👈 move the image downward */
+		
 		
 	}
 
