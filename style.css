@@ -411,7 +411,42 @@ h1 {
 		border-radius: 0 0 50px 50px;
 	}
 
+	/* Specific mobile image zoom settings for banner slideshow */
+	.banner .slide img[src*="housefront (2).jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		object-position: center 60%;
+	}
 
+	.banner .slide img[src*="breakfast1.jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		object-position: center 65%;
+	}
+
+	.banner .slide img[src*="houseback (6).jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		object-position: center 55%;
+	}
+
+	.banner .slide img[src*="room (2).jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		object-position: center 45%;
+	}
+
+	.banner .slide img[src*="flower (2).jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		object-position: center 35%;
+	}
+
+	.banner .slide img[src*="culemborg (14).jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		object-position: 40% center;
+	}
 
     /* Navbar mobile fix */
     .navbar {
