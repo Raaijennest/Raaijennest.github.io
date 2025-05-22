@@ -385,11 +385,10 @@ h1 {
 
     /* Hero slideshow responsiveness */
 	.banner .slideshow-container {
-		width: 100%;
-		height: auto;
 		border-radius: 0 0 50px 50px;
 		overflow: hidden;
 		position: relative;
+		margin-top: -20px;
 	}
 
 	.banner .slides-wrapper {
@@ -403,21 +402,15 @@ h1 {
 	}
 	
 	.banner .slide img {
+		margin-top: -20px;
 		display: block;
-		width: 100%;
-		height: auto;
+		width: 120%;
 		object-fit: cover;
 		object-position: center;
 		border-radius: 0 0 50px 50px;
 	}
 
-	.banner .slide img[src*="housefront (2).jpg"],
-	.banner .slide img[src*="breakfast1.jpg"],
-	.banner .slide img[src*="culemborg (14).jpg"] {
-		height: 100vh;
-		object-fit: cover;
-		object-position: center center;
-	}
+
 
     /* Navbar mobile fix */
     .navbar {
