@@ -413,7 +413,7 @@ h1 {
 		position: relative;
 		margin-top: -20px;
 		margin-left: -20px;
-		height: 600px; /* 👈 limit the container height to crop the image */
+		height: 400px; /* 👈 limit the container height to crop the image */
 	}
 
 	.banner .slides-wrapper {
@@ -427,10 +427,13 @@ h1 {
 	}
 	
 	.banner .slide img {
-		margin-top: -20px;
+		height: 120%; /* Zoom a little to allow crop flexibility */
+		margin-top: -190px;
 		display: block;
 		object-fit: cover;
 		border-radius: 0 0 50px 50px;
+		object-position: center 20%; /* 👈 move the image downward */
+		
 	}
 
 	/* Specific mobile image zoom settings for banner slideshow */
