@@ -371,9 +371,9 @@ h1 {
     .section-wrapper.banner,
     .textbox1,
     .textbox2 {
-        width: 95%;
         border-radius: 20px;
         padding: 20px;
+		width: 110%
     }
 
     .overlay-text {
@@ -381,6 +381,7 @@ h1 {
         text-align: center;
         padding: 0 10px;
         word-break: break-word;
+		
     }
 
     /* Hero slideshow responsiveness */
@@ -389,12 +390,13 @@ h1 {
 		overflow: hidden;
 		position: relative;
 		margin-top: -20px;
+		margin-left: -20px;
 	}
 
 	.banner .slides-wrapper {
 		display: flex;
 		flex-wrap: nowrap;
-		width: 100%;
+
 	}
 
 	.banner .slide {
@@ -404,7 +406,6 @@ h1 {
 	.banner .slide img {
 		margin-top: -20px;
 		display: block;
-		width: 120%;
 		object-fit: cover;
 		object-position: center;
 		border-radius: 0 0 50px 50px;
