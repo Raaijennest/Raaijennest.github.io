@@ -445,12 +445,14 @@ h1 {
 	.banner .slide img[src*="housefront (2).jpg"] {
 		height: 100vh;
 		object-fit: cover;
+		margin-top: -280px;
 		object-position: 10% center;
 	}
 	
 	.banner .slide img[src*="breakfast1.jpg"] {
 		height: 100vh;
 		object-fit: cover;
+		margin-top: -300px;
 		object-position: center 100%;
 	}
 	
@@ -458,6 +460,7 @@ h1 {
 		height: 100vh;
 		object-fit: cover;
 		object-position: center 70%;
+		margin-top: -260px;
 	}
 	
 	 .ontbijt-foto {
