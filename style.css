@@ -413,6 +413,7 @@ h1 {
 		position: relative;
 		margin-top: -20px;
 		margin-left: -20px;
+		height: 600px; /* 👈 limit the container height to crop the image */
 	}
 
 	.banner .slides-wrapper {
@@ -429,7 +430,6 @@ h1 {
 		margin-top: -20px;
 		display: block;
 		object-fit: cover;
-		object-position: center;
 		border-radius: 0 0 50px 50px;
 	}
 
@@ -454,10 +454,10 @@ h1 {
 	.banner .slide img[src*="room (2).jpg"] {
 		height: 100vh;
 		object-fit: cover;
-		object-position: center 100%;
+		object-position: center 70%;
 	}
 	
-	  .ontbijt-foto {
+	 .ontbijt-foto {
 		display: block;
 		margin: 10px auto 0 10px; /* top auto bottom left */
 		width: 90%; /* or adjust as needed */
