@@ -428,7 +428,7 @@ h1 {
 	
 	.banner .slide img {
 		height: 120%; /* Zoom a little to allow crop flexibility */
-		margin-top: -190px;
+		margin-top: -250px;
 		display: block;
 		object-fit: cover;
 		border-radius: 0 0 50px 50px;
