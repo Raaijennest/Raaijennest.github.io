@@ -143,7 +143,7 @@ h1 {
 }
 
 .text-image-right .text {
-  flex: 1 1 15%;
+  flex: 1 1 65%;
 }
 
 .text-image-right .small-image-right {
@@ -411,13 +411,16 @@ h1 {
 	.text-image-right {
 		flex-direction: column;
 		padding: 20px;
-	  }
+		align-items: center;
+	}
 
-	 .text-image-right .small-image-right {
-		width: 120px;
-		height: 120px;
-		margin: 10px auto;
-	  }
+	.text-image-right .small-image-right {
+		width: 90%;           /* Make it nearly full-width on mobile */
+		max-width: 320px;     /* Optional: cap width for very wide phones */
+		height: 200px;         /* Let the image scale naturally */
+		margin: 20px auto;    /* Centered with more breathing space */
+		display: block;
+	}
   
     .logo img {
         height: 60px;
