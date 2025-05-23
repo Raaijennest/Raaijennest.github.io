@@ -364,17 +364,17 @@ h1 {
 }
 
 .banner .slide img[src*="housefront (2).jpg"] {
-	object-position: center 190%;
+	object-position: center 70%;
 }
 
 .banner .slide img[src*="breakfast1.jpg"] {
-	object-position: center 230%;
+	object-position: center 90%;
 }
 
 .banner .slide img[src*="room (2).jpg"] {
-	height: 100vh;
-	object-fit: cover;
-	object-position: center 150%;
+	height: 500px;
+
+	object-position: center 70%;
 }
 
 .ontbijt-foto {
