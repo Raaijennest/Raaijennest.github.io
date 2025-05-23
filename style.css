@@ -132,6 +132,29 @@ h1 {
 }
 
 /* -------------------------------
+   Image right side
+-------------------------------- */
+.text-image-right {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 40px 50px;
+  flex-wrap: wrap;
+}
+
+.text-image-right .text {
+  flex: 1 1 15%;
+}
+
+.text-image-right .small-image-right {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+/* -------------------------------
    Hero Banner (bovenkant pagina)
 -------------------------------- */
 .banner {
@@ -385,6 +408,17 @@ h1 {
    Responsive (Mobile) Styles
 -------------------------------- */
 @media (max-width: 768px) {
+	.text-image-right {
+		flex-direction: column;
+		padding: 20px;
+	  }
+
+	 .text-image-right .small-image-right {
+		width: 120px;
+		height: 120px;
+		margin: 10px auto;
+	  }
+  
     .logo img {
         height: 60px;
     }
