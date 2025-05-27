@@ -1,10 +1,12 @@
 reserveer html maken X
-banner home uitzoomen
-text van rest pagina's beetje naar rechts
+banner home uitzoomen 
+text van rest pagina's beetje naar rechts X
 telefoon nummer updaten bij prijs en contact pagina. X
 lettertype mobiel verbeteren X
-Beschrijving referentie veranderen (mam)
-Change icon 
+Beschrijving referentie veranderen (mam) X
+Change icon X
+banner aanpassen op verschillende fotos (lengte breedte)
+
 
 Nieuwe foto's bij banner (mam)X
 Ontbijt index.html uithalen en onder de text bij "heerlijk ontbijt" X
@@ -15,14 +17,17 @@ agenda2025 -> naar omgeving.html en hernoemd naar activiteiten culemborg 2025 X
 reserveren -> 
 > maak contact container (zoals bij gouda) KVK 97293008 + 
 > telefoonnummer (niet verplicht) toevoegen aan form.  X
-> (geen prio text te links) 
+> (geen prio text te links) X
 > agenda alleen vr, zat, zon X
 > laatste dag niet zichtbaar op kalender X
 > Zet tekst erbij dat ze altijd kunnen bellen als het vol is X
 > Melding dat er nieuwe afspraak is gemaakt X
 > agenda omzetten naar schapenzolder@gmail.com X
 
-contact -> voeg ook contact container toe onder daar.
+contact -> 
+voeg ook contact container toe onder daar. (witte tekst met groene achterground) X
+Liggende kat foto rond
+
 
 omgeving ->
 > Festiviteit foto
