@@ -545,21 +545,21 @@ h1 {
 	}
 	
 	.banner .slide img[src*="breakfast1.jpg"] {
-		object-fit: cover;
-		margin-top: -300px;
+		object-fit: contain;
+		margin-top: -550px;
 		object-position: center 100%;
 	}
 	
 	.banner .slide img[src*="houseback (6).jpg"] {
 		object-fit: cover;
-		margin-top: -180px;
+		margin-top: -250px;
 		object-position: 20% center;
 	}
 		
 	.banner .slide img[src*="room (2).jpg"] {
 		object-fit: cover;
 		object-position: center 60%;
-		margin-top: -260px;
+		margin-top: -200px;
 	}
 
 	.banner .slide img[src*="flower (2).jpg"] {
