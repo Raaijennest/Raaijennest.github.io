@@ -476,6 +476,112 @@ h1 {
    Responsive (Mobile) Styles
 -------------------------------- */
 @media (max-width: 768px) {
+	/* Hero slideshow responsiveness */
+	.section-wrapper.banner {
+		padding: 0;
+		margin: 0;
+		width: 100vw;
+		overflow: hidden;
+	}
+	  
+	.banner .slideshow-container {
+		width: 100vw;
+		height: 220px; /* 👈 shorter height for wide feel */
+		border-radius: 0 0 50px 50px;
+		position: relative;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+
+	.banner .slides-wrapper {
+		display: flex;
+		width: 100%;
+		flex-wrap: nowrap;
+	}
+
+	.banner .slide {
+		flex: 0 0 100%;
+	}
+
+	
+	.banner .slide img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+		display: block;
+	}
+	
+	.hero-box-slideshow .slideshow-indicators {
+		position: absolute;
+		bottom: 12px;         /* 👈 bring them back inside the shorter container */
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 8px;
+		z-index: 2;
+	}
+	
+	
+	.hero-box-slideshow .slideshow-indicator {
+		width: 10px;
+		height: 10px;
+		background-color: rgba(255, 255, 255, 0.7);
+		border-radius: 50%;
+		cursor: pointer;
+		transition: opacity 0.3s ease;
+	}
+
+	.hero-box-slideshow .slideshow-indicator.active {
+		background-color: white;
+	}
+
+	/* Specific mobile image zoom settings for banner slideshow */
+	.banner .slide img[src*="culemborg (14).jpg"] {
+		height: 100vh;
+		margin-top: -180px;
+		object-position: 10% center;
+	}
+	
+	.banner .slide img[src*="housefront (2).jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		margin-top: -280px;
+		object-position: 20% center;
+	}
+	
+	.banner .slide img[src*="houseback (6).jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		margin-top: -180px;
+		object-position: 20% center;
+	}
+		
+		
+	.banner .slide img[src*="flower (2).jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		margin-top: -180px;
+		object-position: 20% center;
+	}
+	
+	.banner .slide img[src*="breakfast1.jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		margin-top: -300px;
+		object-position: center 100%;
+	}
+	
+	.banner .slide img[src*="room (2).jpg"] {
+		height: 100vh;
+		object-fit: cover;
+		object-position: center 60%;
+		margin-top: -260px;
+	}
+
+
+
+	/* other image slideshows */
 	.text-image-left {
 		flex-direction: column;
 		align-items: center;
@@ -520,11 +626,7 @@ h1 {
 		background: #FF0000
     }
 	
-	.section-wrapper.banner {
-		background: #FF0000;        /* for testing */
-		padding: 0;
-		margin: 0;
-	  }
+
 
     .overlay-text {
         font-size: 20px;
@@ -534,66 +636,10 @@ h1 {
 		
     }
 
-    /* Hero slideshow responsiveness */
-	.banner .slideshow-container {
-		border-radius: 0 0 50px 50px;
-		overflow: hidden;
-		position: relative;
-		margin-top: -20px;
 
-		height: 400px; /* 👈 limit the container height to crop the image */
-		
-	}
 
-	.banner .slides-wrapper {
-		display: flex;
-		flex-wrap: nowrap;
 
-	}
 
-	.banner .slide {
-		flex: 0 0 100%;
-	}
-	
-	.banner .slide img {
-		height: 120%; /* Zoom a little to allow crop flexibility */
-		max-width: 100%;
-		width: 100%;
-		margin-top: -250px;
-		display: block;
-		object-fit: cover;
-		border-radius: 0 0 50px 50px;
-		object-position: center 20%; /* 👈 move the image downward */
-		
-		
-	}
-
-	/* Specific mobile image zoom settings for banner slideshow */
-	.banner .slide img[src*="culemborg (14).jpg"] {
-		height: 100vh;
-		object-position: 10% center;
-	}
-	
-	.banner .slide img[src*="housefront (2).jpg"] {
-		height: 100vh;
-		object-fit: cover;
-		margin-top: -280px;
-		object-position: 10% center;
-	}
-	
-	.banner .slide img[src*="breakfast1.jpg"] {
-		height: 100vh;
-		object-fit: cover;
-		margin-top: -300px;
-		object-position: center 100%;
-	}
-	
-	.banner .slide img[src*="room (2).jpg"] {
-		height: 100vh;
-		object-fit: cover;
-		object-position: center 70%;
-		margin-top: -260px;
-	}
 	
 	 .ontbijt-foto {
 		display: block;
