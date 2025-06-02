@@ -31,14 +31,24 @@
 
     <main>
 
-		<h2>Reserveren</h2>
-		<p>Klik op de knop om je gegevens in te vullen in Google Agenda om een reservering aan te maken. De aanvraag wordt automatisch in uw agenda gezet. <br>
-		<b>Na de reservering, sturen wij u handmatig nog een bevestigingsmail en een betalingsverzoek </b> </p>
+	<h2>Reserveren</h2>
+	<p>
+	  Klik op de knop om je gegevens in te vullen in Google Agenda om een reservering aan te maken. De aanvraag wordt automatisch in uw agenda gezet.<br>
+	  <b>Na de reservering, sturen wij u handmatig nog een bevestigingsmail en een betalingsverzoek.</b>
+	</p>
 
-	<a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1CIzxowHk8f9ctctpZ-Mv2T0y7jcG4YXmG3CuXeKLahhXFeRpSmCSBzXpc7hr8JekA7G1IsEQX" target="_blank">
-	  <button class="reserveren-knop">
-		Reserveren voor B&B
-	  </button>
+	<!-- Checkbox met link naar voorwaarden -->
+	<label style="display: flex; align-items: center; margin-bottom: 10px; margin-left: 50px;">
+	  <input type="checkbox" id="akkoordVoorwaarden" style="transform: scale(1.4); accent-color: #66cc66;">
+	  <span style="margin-left: 10px;">
+		Ik ga akkoord met de <a href="voorwaarden.html" target="_blank">algemene voorwaarden</a>
+	  </span>
+	</label>
+
+	<!-- Knop buiten de link, wordt pas actief bij akkoord -->
+	<button id="reserverenBtn" class="reserveren-knop" disabled>
+	  Reserveren voor B&B
+	</button>
 	</a>
 	<p>
 	Lukt het niet of gaat er iets fout? Neem dan gerust even contact met ons op. (06 82078569)
@@ -122,6 +132,26 @@
 			</script>
 -->
     </main>
+	<script>
+	  // Verwijzingen
+	  const checkbox = document.getElementById("akkoordVoorwaarden");
+	  const button = document.getElementById("reserverenBtn");
+
+	  // Activeer knop pas na aanvinken
+	  checkbox.addEventListener("change", () => {
+		button.disabled = !checkbox.checked;
+	  });
+
+	  // Doorverwijzen als akkoord
+	  button.addEventListener("click", () => {
+		if (checkbox.checked) {
+		  window.open(
+			"https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1CIzxowHk8f9ctctpZ-Mv2T0y7jcG4YXmG3CuXeKLahhXFeRpSmCSBzXpc7hr8JekA7G1IsEQX",
+			"_blank"
+		  );
+		}
+	  });
+	</script>
 
     <footer>
         <p>&copy; 2025 Bed & Breakfast De Schapenzolder. Alle rechten voorbehouden.</p>

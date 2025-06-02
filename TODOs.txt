@@ -26,8 +26,8 @@ reserveren ->
 
 contact -> 
 voeg ook contact container toe onder daar. (witte tekst met groene achterground) X
-Liggende kat foto rond
-
+Liggende kat foto rond X
+anulering X
 
 omgeving ->
 > Festiviteit foto
