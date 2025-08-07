@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda - Bed & Breakfast De Schapenzolder</title>
-    <meta name="description" content="Agenda van Bed & Breakfast De Schapenzolder met evenementen in de omgeving.">
-    <meta name="keywords" content="Agenda, Evenementen, Bed & Breakfast, Schapenzolder, Culemborg">
+    <title>Reserveren - Bed & Breakfast De Schapenzolder</title>
+    <meta name="description" content="Reserveren van Bed & Breakfast De Schapenzolder met evenementen in de omgeving.">
+    <meta name="keywords" content="Reserveren, Evenementen, Bed & Breakfast, Schapenzolder, Culemborg">
     <meta name="author" content="Bed & Breakfast De Schapenzolder">
 	<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -21,7 +21,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="prijs.html">Prijs</a></li>
-                <li><a href="agenda.html">Reserveren</a></li>
+                <li><a href="reserveren.html">Reserveren</a></li>
                 <li><a href="omgeving.html">Omgeving</a></li>
                 <li><a href="contact.html">Contact</a></li>
 				<li><a href="recensies.html">Recensies</a></li>
@@ -78,54 +78,6 @@
 	  </div>
 	</section>
 	
-<!-- 
-		<form id="reserveringForm">
-		  <label>Naam:
-			<input type="text" name="naam" required>
-		  </label><br><br>
-
-		  <label>E-mailadres:
-			<input type="email" name="email" required>
-		  </label><br><br>
-
-		  <label>Begin datum:
-			<input type="date" name="beginDatum" required>
-		  </label><br><br>
-
-		  <label>Eind datum:
-			<input type="date" name="eindDatum" required>
-		  </label><br><br>
-
-		  <label>Opmerkingen:<br>
-			<textarea name="opmerkingen" rows="6" style="width:100%;"></textarea>
-		  </label><br><br>
-
-		  <button type="submit">Verstuur reservering</button>
-		</form>
-
-		<div id="status"></div>
-
-		<script>
-		document.getElementById('reserveringForm').addEventListener('submit', function(e) {
-		  e.preventDefault();
-
-		  const form = e.target;
-		  const formData = new FormData(form);
-
-			fetch('https://script.google.com/macros/s/AKfycby-qSERh6eNXHRMhmR0u6MnWybo28mHabKO5l1HL819rSbDAeSmSurx9RlgV5_8Ujup/exec', {
-				method: 'POST',
-				mode: 'no-cors', // Important to avoid CORS error
-				body: formData
-			  }).then(() => {
-				document.getElementById('status').textContent = '✅ Reservering verstuurd! De data zijn onder voorbehoud gereserveerd.';
-				form.reset();
-			  }).catch(err => {
-				document.getElementById('status').textContent = '❌ Fout bij verzenden. Probeer het opnieuw.';
-				console.error('Error:', err);
-			  });
-			});
-			</script>
--->
     </main>
 	<script>
 	  // Verwijzingen
