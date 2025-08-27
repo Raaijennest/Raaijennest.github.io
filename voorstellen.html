@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Even voorstellen: Edwin en Erika van Raaij - Bed & Breakfast De Schapenzolder.">
+  <meta name="keywords" content="voorstellen, Edwin en Erika, gastvrij, bed and breakfast, Culemborg">
+  <meta name="author" content="Bed & Breakfast De Schapenzolder">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Even Voorstellen - De Schapenzolder</title>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="photos/logo.png" alt="Logo van Bed & Breakfast De Schapenzolder">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="prijs.html">Prijs</a></li>
+        <li><a href="reserveren.html">Reserveren</a></li>
+        <li><a href="omgeving.html">Omgeving</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="recensies.html">Recensies</a></li>
+        <li><a href="voorstellen.html" class="active">Voorstellen</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section-wrapper white-bg">
+    <div class="textbox">
+	  <h2>Even voorstellen</h2>
+      <p>Wij zijn Edwin en Erika van Raaij.<br>
+      We wonen hier samen met onze twee zoons, drie katten, vier kippen en een haan op deze prachtige, rustige plek aan de rand van Culemborg.</p>
+      	</div>
+	</main>
+
+
+<section class="section-wrapper green-bg">
+	<div class="text-slideshow-container">
+		<div class="textbox 1">
+		  <h2>Voor en na</h2>
+      <p>Drie jaar geleden hebben we ons huis gerenoveerd en die periode hebben we gewoond op de zolder van de schuur. 
+      Deze zolder, met prachtig uitzicht over weilanden en een boomgaard, wilden we nu graag delen met anderen door middel van een bed en breakfast.</p>
+		</div>
+
+
+		<div class="slideshow-container">
+			<div class="slides-wrapper">
+			<div class="slide">
+				<img src="photos/voorstel2.jpg" alt="Voorkant van het huis">
+			</div>
+			<div class="slide">
+				<img src="photos/voorstel3.jpg" alt="Ontbijt">
+			</div>
+			</div>
+			<div class="slideshow-indicators"></div>
+		</div>
+	</div>
+</section>
+		
+<section class="section-wrapper white-bg">
+	<div class="text-slideshow-container">
+		<div class="textbox 2">
+	<p>We vinden het allebei erg leuk om de verschillende verhalen en redenen te horen van gasten die bij ons logeren en 
+			  wij vertellen graag over wat er hier te zien en te beleven is in de buurt. 
+			  Maar bieden u ook de rust en privacy om te kunnen ontspannen en genieten van deze prachtige plek.</p>
+
+	</div>
+	
+		<div class="slideshow-container">
+			<div class="slides-wrapper">
+				<div class="slide">
+					<img src="photos/voorstel1.jpg" alt="Kamer 1 in Bed & Breakfast De Schapenzolder">
+				</div>
+				<div class="slide">
+					<img src="photos/voorstel7.jpg" alt="Kamer 2 in Bed & Breakfast De Schapenzolder">
+				</div>
+				<div class="slide">
+					<img src="photos/voorstel10.jpg" alt="Kamer 3 in Bed & Breakfast De Schapenzolder">
+				</div>
+			</div>
+		<div class="slideshow-indicators"></div>
+		</div>
+</section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Bed & Breakfast De Schapenzolder. Alle rechten voorbehouden.</p>
+  </footer>
+  
+  	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const allSlideshows = document.querySelectorAll(".slideshow-container");
+
+			allSlideshows.forEach((slideshow) => {
+				const wrapper = slideshow.querySelector(".slides-wrapper");
+				const slides = slideshow.querySelectorAll(".slide");
+				const indicatorsContainer = slideshow.querySelector(".slideshow-indicators");
+				let index = 0;
+				let autoSlideInterval;
+
+				function getSlideWidth() {
+					return slides[0].clientWidth; // veiliger dan offsetWidth
+				}
+
+				// Create indicators
+				slides.forEach((_, i) => {
+					const indicator = document.createElement("div");
+					indicator.classList.add("slideshow-indicator");
+					indicator.addEventListener("click", () => {
+						index = i;
+						updateSlide();
+						resetAutoSlide();
+					});
+					indicatorsContainer.appendChild(indicator);
+				});
+
+				const indicators = indicatorsContainer.querySelectorAll(".slideshow-indicator");
+
+				function updateSlide() {
+					const width = getSlideWidth();
+					wrapper.style.transform = `translateX(-${index * width}px)`;
+					indicators.forEach((el, i) =>
+						el.classList.toggle("active", i === index)
+					);
+				}
+
+				function autoSlide() {
+					index = (index + 1) % slides.length;
+					updateSlide();
+				}
+
+				function resetAutoSlide() {
+					clearInterval(autoSlideInterval);
+					autoSlideInterval = setInterval(autoSlide, 9000);
+				}
+
+				updateSlide();
+				resetAutoSlide();
+
+				// Responsive fix: update on resize
+				window.addEventListener("resize", updateSlide);
+			});
+		});
+	</script>
+</body>
+
+</html>
