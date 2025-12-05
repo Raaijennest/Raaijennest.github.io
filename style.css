@@ -573,8 +573,19 @@ h1 {
 		margin-top: -280px;
 		object-position: 10% center;
 	}
+	
+		.banner .slide img[src*="christmas (4).jpeg"] {
+		object-fit: contain;
+		margin-top: -480px;
+		object-position: 10% center;
+	}
 
-
+		.banner .slide img[src*="christmas (1).jpeg"] {
+		object-fit: contain;
+		margin-top: -180px;
+		object-position: 10% center;
+	}
+	
 	/* other image slideshows */
 	.text-image-left {
 		flex-direction: column;
